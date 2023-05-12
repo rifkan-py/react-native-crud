@@ -17,11 +17,17 @@ export default function App() {
     });
   };
 
+  const submitHandler = (val) => {
+    setTodoList((prev) => {
+      return [{ text: val, key: Date.now() }, ...prev];
+    });
+  };
+
   return (
     <View style={styles.container}>
       <Header />
       <View style={styles.content}>
-        <AddTodo />
+        <AddTodo onSubmit={submitHandler} />
         <View style={styles.list}>
           <FlatList
             data={todoList}
