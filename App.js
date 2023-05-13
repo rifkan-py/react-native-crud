@@ -11,6 +11,7 @@ import {
 import Header from "./components/Header";
 import TodoItem from "./components/TodoItem";
 import AddTodo from "./components/AddTodo";
+import Sandbox from "./components/Sandbox";
 
 export default function App() {
   const [todoList, setTodoList] = useState([
@@ -38,6 +39,7 @@ export default function App() {
   };
 
   return (
+    //<Sandbox />
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={styles.container}>
         <Header />
@@ -64,8 +66,10 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: 30,
+    flex: 1,
   },
   list: {
+    flex: 1,
     marginTop: 20,
   },
 });
